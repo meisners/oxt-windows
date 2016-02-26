@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6FFF51EB-E5D4-490E-A675-AE49FDAA6A39}</ProjectGuid>
+    <RootNamespace>xenaud</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\WinDDK\6001.18002\inc\ddk;C:\WinDDK\6001.18002\inc\mfc42;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;DBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>C:\WinDDK\6001.18002\inc\ddk;C:\WinDDK\6001.18002\inc\mfc42;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="adapter.cpp" />
+    <ClCompile Include="common.cpp" />
+    <ClCompile Include="mintopo.cpp" />
+    <ClCompile Include="prophnd.cpp" />
+    <ClCompile Include="rtminiport.cpp" />
+    <ClCompile Include="rtstream.cpp" />
+    <ClCompile Include="wavepciminiport.cpp" />
+    <ClCompile Include="wavepcistream.cpp" />
+    <ClCompile Include="xen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ac97reg.h" />
+    <ClInclude Include="adapter.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="..\..\inc\config.h" />
+    <ClInclude Include="debug.h" />
+    <ClInclude Include="guids.h" />
+    <ClInclude Include="ichreg.h" />
+    <ClInclude Include="..\..\inc\input.h" />
+    <ClInclude Include="mintopo.h" />
+    <ClInclude Include="..\..\inc\ring.h" />
+    <ClInclude Include="rtminiport.h" />
+    <ClInclude Include="rtstream.h" />
+    <ClInclude Include="..\..\inc\scsifilt_ioctl.h" />
+    <ClInclude Include="shared.h" />
+    <ClInclude Include="..\..\inc\types.h" />
+    <ClInclude Include="..\..\inc\v2v.h" />
+    <ClInclude Include="..\..\inc\v2vk.h" />
+    <ClInclude Include="..\..\inc\v4v.h" />
+    <ClInclude Include="..\..\inc\v4vapi.h" />
+    <ClInclude Include="..\..\inc\vbd_special.h" />
+    <ClInclude Include="..\..\inc\verinfo.h" />
+    <ClInclude Include="..\..\inc\vring.h" />
+    <ClInclude Include="wavepciminiport.h" />
+    <ClInclude Include="wavepcistream.h" />
+    <ClInclude Include="..\..\inc\wrapper_types.h" />
+    <ClInclude Include="..\..\inc\xenops.h" />
+    <ClInclude Include="..\..\inc\xenvbd_ioctl.h" />
+    <ClInclude Include="..\..\inc\xs_ioctl.h" />
+    <ClInclude Include="..\..\inc\xs_private.h" />
+    <ClInclude Include="..\..\inc\xsapi-future.h" />
+    <ClInclude Include="..\..\inc\xsapi-legacy.h" />
+    <ClInclude Include="..\..\inc\xsapi.h" />
+    <ClInclude Include="..\..\inc\xscompat.h" />
+    <ClInclude Include="..\..\inc\xsmtcapi.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ac97smpl.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="xen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="makefile" />
+    <None Include="sources" />
+    <None Include="xenaud.inf" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
