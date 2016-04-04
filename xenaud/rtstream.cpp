@@ -11,6 +11,7 @@ static char STR_MODULENAME[] = "AC97 RT Stream: ";
 
 #include "rtminiport.h"
 #include "rtstream.h"
+#include <ntddk.h>
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 
@@ -200,7 +201,7 @@ NTSTATUS CAC97MiniportWaveRTStream::Init
     // If the HW cannot see the memory, free it and use AllocatePagesForMdl
     // which allocates always complete pages, so we have to waste some memory.
     //
-    if (MmGetPhysicalAddress (BDList).HighPart != 0)
+    //if (MmGetPhysicalAddress (BDList).HighPart != 0)
     {
       PHYSICAL_ADDRESS  high;
 
@@ -946,8 +947,8 @@ NTSTATUS CAC97MiniportWaveRTStream::ResetDMA (void)
     //
     // Setup the Buffer Descriptor Base Address (BDBA) register.
     //
-    Miniport->AdapterCommon->
-        WriteBMControlRegister (m_ulBDAddr, MmGetPhysicalAddress (BDList).LowPart);
+//    Miniport->AdapterCommon->
+//        WriteBMControlRegister (m_ulBDAddr, MmGetPhysicalAddress (BDList).LowPart);
 
     //
     // Set the DMA engine state.

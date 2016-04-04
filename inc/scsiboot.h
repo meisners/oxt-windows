@@ -125,7 +125,7 @@ VOID XmFreeMemory(PVOID ptr);
 do {                                                        \
     if (!(_expr)) {                                         \
         const char *file = __FILE__;                        \
-        USHORT line = __LINE__;                             \
+        ULONG line = __LINE__;                             \
         const char *expr = #_expr;                          \
                                                             \
         TraceInternal(("XM_ASSERT: %s at %s:%d\n",          \
@@ -147,7 +147,7 @@ do {                                                        \
                                                             \
     if (!(lval _op rval)) {                                 \
         const char *file = __FILE__;                        \
-        USHORT line = __LINE__;                             \
+        ULONG line = __LINE__;                             \
         const char *expr = #_x " " #_op " " #_y;            \
                                                             \
         TraceInternal(("XM_ASSERT: %s at %s:%d "            \
@@ -169,7 +169,7 @@ do {                                                        \
                                                             \
     if (!(lval _op rval)) {                                 \
         const char *file = __FILE__;                        \
-        USHORT line = __LINE__;                             \
+        ULONG line = __LINE__;                             \
         const char *expr = #_x " " #_op " " #_y;            \
                                                             \
         TraceInternal(("XM_ASSERT: %s at %s:%d "            \
@@ -193,7 +193,7 @@ do {                                                        \
                                                             \
     if (!(lval _op rval)) {                                 \
         const char *file = __FILE__;                        \
-        USHORT line = __LINE__;                             \
+        ULONG line = __LINE__;                             \
         const char *expr = #_x " " #_op " " #_y;            \
                                                             \
         TraceInternal(("XM_ASSERT: %s at %s:%d "            \

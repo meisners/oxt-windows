@@ -148,7 +148,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ac97smpl.rc">
+    <ResourceCompile Include="xenaud.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
