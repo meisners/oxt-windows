@@ -127,8 +127,9 @@ def get_configuration(release, debug):
 def get_target_path(release, arch, debug):
     configuration = get_configuration(release, debug)
     name = ''.join(configuration.split(' '))
-    target = { 'x86': 'Build', 'x64': 'Build' }
-    target_path = os.sep.join([target[arch], name])
+    target = { 'x86': 'Win32', 'x64': 'x64' }
+    target_path = os.sep.join(['..\\Build', name, target[arch]])
+    print('targpath='+target_path)
 
     return target_path
 
@@ -201,21 +202,17 @@ def remove_timestamps(path):
     src.close()
 
 def run_sdv(name, dir):
-    configuration = get_configuration('Windows 8', False)
+    configuration = get_configuration('', False)
     platform = 'x64'
 
-    msbuild(platform, configuration, 'Build', name + '.vcxproj',
-            '', os.path.join('proj', name))
-    msbuild(platform, configuration, 'sdv', name + '.vcxproj',
-            '/p:Inputs="/clean"', os.path.join('proj', name))
-    msbuild(platform, configuration, 'sdv', name + '.vcxproj',
-            '/p:Inputs="/check:default.sdv"', os.path.join('proj', name))
+    msbuild(platform, configuration, 'Build', name, '', '.')
+    msbuild(platform, configuration, 'sdv', name, '/p:Inputs="/clean"', '.')
+    msbuild(platform, configuration, 'sdv', name, '/p:Inputs="/check:default.sdv"', '.')
 
     path = ['proj', name, 'sdv', 'SDV.DVL.xml']
     remove_timestamps(os.path.join(*path))
 
-    msbuild(platform, configuration, 'dvl', name + '.vcxproj',
-            '', os.path.join('proj', name))
+    msbuild(platform, configuration, 'dvl', name, '', '.')
 
     path = ['proj', name, name + '.DVL.XML']
     shutil.copy(os.path.join(*path), dir)
@@ -266,7 +263,7 @@ def symstore_add(projpath, name, release, arch, debug):
     command.append(os.environ['SYMBOL_SERVER'])
     command.append('/r')
     command.append('/f')
-    command.append('*.pdb')
+    command.append(name+'.pdb')
     command.append('/t')
     command.append(name)
     command.append('/v')
@@ -303,8 +300,17 @@ def archive(filename, files, tgz=False):
 
 if __name__ == '__main__':
 
-    driver = 'xeninp'
-    projpath = 'input\\xeninp'
+    if len(sys.argv) < 3:
+        print('Parameters:\n' + sys.argv[0] + ' \"free / checked\" \"rel path\" [driver name] [nosdv]')
+        print(' At least 2 parameters must be supplied')
+        print(' If no driver name is given, it is assumed to be the same as the path name')
+        exit();
+
+    if len(sys.argv) < 4:
+        driver = sys.argv[2]
+    else:
+        driver = sys.argv[3]
+    projpath = sys.argv[2]
     project = projpath + '\\' + driver + '.vcxproj'
     os.environ['MAJOR_VERSION'] = '7'
     os.environ['MINOR_VERSION'] = '2'
@@ -332,9 +338,9 @@ if __name__ == '__main__':
     symstore_add(projpath, driver, release, 'x86', debug[sys.argv[1]])
     symstore_add(projpath, driver, release, 'x64', debug[sys.argv[1]])
 
-    if len(sys.argv) <= 2 or sys.argv[2] != 'nosdv':
-        run_sdv(driver, driver)
+    # if len(sys.argv) <= 4 or sys.argv[4] != 'nosdv':
+    #     run_sdv(driver, driver)
 
     listfile = callfnout(['git','ls-tree', '-r', '--name-only', 'HEAD'])
-    archive('input\\xeninp\\source.tgz', listfile.splitlines(), tgz=True)
-    archive('xeninp.tar', ['xeninp', 'revision'])
+    archive(projpath+'\\source.tgz', listfile.splitlines(), tgz=True)
+    archive(driver+'.tar', [driver, 'revision'])

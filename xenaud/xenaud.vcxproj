@@ -70,31 +70,31 @@
     <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
     <TargetExt>.sys</TargetExt>
-    <LibraryPath>$(SolutionDir)legacy-libs\$(PlatformTarget);$(SolutionDir)Build\$(Configuration)\$(PlatformName)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)..\legacy-libs\$(PlatformTarget);$(SolutionDir)Build\$(Configuration)\$(PlatformName)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>false</LinkIncremental>
     <TargetExt>.sys</TargetExt>
-    <LibraryPath>$(SolutionDir)legacy-libs\$(PlatformTarget);$(SolutionDir)Build\$(Configuration)\$(PlatformName)\;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <LibraryPath>$(ProjectDir)..\legacy-libs\$(PlatformTarget);$(SolutionDir)Build\$(Configuration)\$(PlatformName)\;$(LibraryPath)</LibraryPath>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
     <TargetExt>.sys</TargetExt>
-    <LibraryPath>$(SolutionDir)legacy-libs\$(PlatformTarget);$(SolutionDir)Build\$(Configuration)\$(PlatformName)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)..\legacy-libs\$(PlatformTarget);$(SolutionDir)Build\$(Configuration)\$(PlatformName)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <TargetExt>.sys</TargetExt>
-    <LibraryPath>$(SolutionDir)legacy-libs\$(PlatformTarget);$(SolutionDir)Build\$(Configuration)\$(PlatformName)\;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <LibraryPath>$(ProjectDir)..\legacy-libs\$(PlatformTarget);$(SolutionDir)Build\$(Configuration)\$(PlatformName)\;$(LibraryPath)</LibraryPath>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -109,6 +109,7 @@
       <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <TreatWarningAsError>false</TreatWarningAsError>
+      <ProgramDataBaseFileName>$(OutDir)$(AssemblyName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -116,7 +117,7 @@
       <TargetMachine>MachineX86</TargetMachine>
       <Driver>Driver</Driver>
       <EntryPointSymbol>DriverEntry</EntryPointSymbol>
-      <AdditionalDependencies>$(SolutionDir)legacy-libs\$(Platform)\xevtchn.lib;$(SolutionDir)Build\$(Configuration)\$(PlatformName)\xenutil.lib;$(DDK_LIB_PATH)\portcls.lib;$(DDK_LIB_PATH)\stdunk.lib;$(DDK_LIB_PATH)\ntstrsafe.lib;$(DDK_LIB_PATH)\libcntpr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(ProjectDir)..\legacy-libs\$(Platform)\xevtchn.lib;$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\xenutil.lib;$(DDK_LIB_PATH)\portcls.lib;$(DDK_LIB_PATH)\stdunk.lib;$(DDK_LIB_PATH)\ntstrsafe.lib;$(DDK_LIB_PATH)\libcntpr.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
     </Link>
     <ResourceCompile>
@@ -136,13 +137,14 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <TreatWarningAsError>false</TreatWarningAsError>
       <MinimalRebuild>true</MinimalRebuild>
+      <ProgramDataBaseFileName>$(OutDir)$(AssemblyName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Native</SubSystem>
       <Driver>Driver</Driver>
       <EntryPointSymbol>DriverEntry</EntryPointSymbol>
-      <AdditionalDependencies>$(SolutionDir)legacy-libs\$(Platform)\xevtchn.lib;$(SolutionDir)Build\$(Configuration)\$(PlatformName)\xenutil.lib;$(DDK_LIB_PATH)\portcls.lib;$(DDK_LIB_PATH)\stdunk.lib;$(DDK_LIB_PATH)\ntstrsafe.lib;$(DDK_LIB_PATH)\libcntpr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(ProjectDir)..\legacy-libs\$(Platform)\xevtchn.lib;$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\xenutil.lib;$(DDK_LIB_PATH)\portcls.lib;$(DDK_LIB_PATH)\stdunk.lib;$(DDK_LIB_PATH)\ntstrsafe.lib;$(DDK_LIB_PATH)\libcntpr.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
     </Link>
     <ResourceCompile>
@@ -161,6 +163,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ProgramDataBaseFileName>$(OutDir)$(AssemblyName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -170,7 +173,7 @@
       <TargetMachine>MachineX86</TargetMachine>
       <Driver>Driver</Driver>
       <EntryPointSymbol>DriverEntry</EntryPointSymbol>
-      <AdditionalDependencies>$(SolutionDir)legacy-libs\$(Platform)\xevtchn.lib;$(SolutionDir)Build\$(Configuration)\$(PlatformName)\xenutil.lib;$(DDK_LIB_PATH)\portcls.lib;$(DDK_LIB_PATH)\stdunk.lib;$(DDK_LIB_PATH)\ntstrsafe.lib;$(DDK_LIB_PATH)\libcntpr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(ProjectDir)..\legacy-libs\$(Platform)\xevtchn.lib;$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\xenutil.lib;$(DDK_LIB_PATH)\portcls.lib;$(DDK_LIB_PATH)\stdunk.lib;$(DDK_LIB_PATH)\ntstrsafe.lib;$(DDK_LIB_PATH)\libcntpr.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
     </Link>
@@ -191,6 +194,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ProgramDataBaseFileName>$(OutDir)$(AssemblyName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -199,7 +203,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <Driver>Driver</Driver>
       <EntryPointSymbol>DriverEntry</EntryPointSymbol>
-      <AdditionalDependencies>$(SolutionDir)legacy-libs\$(Platform)\xevtchn.lib;$(SolutionDir)Build\$(Configuration)\$(PlatformName)\xenutil.lib;$(DDK_LIB_PATH)\portcls.lib;$(DDK_LIB_PATH)\stdunk.lib;$(DDK_LIB_PATH)\ntstrsafe.lib;$(DDK_LIB_PATH)\libcntpr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(ProjectDir)..\legacy-libs\$(Platform)\xevtchn.lib;$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\xenutil.lib;$(DDK_LIB_PATH)\portcls.lib;$(DDK_LIB_PATH)\stdunk.lib;$(DDK_LIB_PATH)\ntstrsafe.lib;$(DDK_LIB_PATH)\libcntpr.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ResourceCompile>
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories);..\inc</AdditionalIncludeDirectories>

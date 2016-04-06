@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xeninp", "input\xeninp\xeninp.vcxproj", "{D593133C-D306-4B4A-8ED5-1C7191EF7668}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xeninp", "xeninp\xeninp.vcxproj", "{D593133C-D306-4B4A-8ED5-1C7191EF7668}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xenaud", "xenaud\xenaud.vcxproj", "{6FFF51EB-E5D4-490E-A675-AE49FDAA6A39}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -13,7 +13,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xenv4v", "xenv4v\xenv4v.vcx
 		{B08CC602-8E34-468C-9E9F-9F80CE169030} = {B08CC602-8E34-468C-9E9F-9F80CE169030}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xenvesado", "xenvesado\miniport.vcxproj", "{66ABD441-ABC9-48BF-BA82-2A86B0ACF175}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xenvesado", "xenvesado\xenvesado.vcxproj", "{66ABD441-ABC9-48BF-BA82-2A86B0ACF175}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B08CC602-8E34-468C-9E9F-9F80CE169030} = {B08CC602-8E34-468C-9E9F-9F80CE169030}
 		{3F8791DF-74A6-4452-88A2-5F7C53DBAA19} = {3F8791DF-74A6-4452-88A2-5F7C53DBAA19}
@@ -23,7 +23,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xenwnet6", "xenwnet\xenwnet
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xenutil", "xenutil\xenutil.vcxproj", "{B08CC602-8E34-468C-9E9F-9F80CE169030}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xengfxsh", "xengfx\shared\xengfxsh.VcxProj", "{3F8791DF-74A6-4452-88A2-5F7C53DBAA19}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xengfxsh", "xengfxsh\xengfxsh.VcxProj", "{3F8791DF-74A6-4452-88A2-5F7C53DBAA19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

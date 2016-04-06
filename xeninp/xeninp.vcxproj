@@ -69,7 +69,7 @@
     <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
     <CodeAnalysisRuleSet>DriverRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <TargetExt>.sys</TargetExt>
@@ -79,11 +79,11 @@
     <CodeAnalysisRuleSet>DriverRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <TargetExt>.sys</TargetExt>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
     <CodeAnalysisRuleSet>DriverRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <TargetExt>.sys</TargetExt>
@@ -93,7 +93,7 @@
     <CodeAnalysisRuleSet>DriverRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <TargetExt>.sys</TargetExt>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -113,6 +113,7 @@
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
       <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
       <CallingConvention>StdCall</CallingConvention>
+      <ProgramDataBaseFileName>$(OutDir)$(AssemblyName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -141,6 +142,7 @@
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
       <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
       <CallingConvention>StdCall</CallingConvention>
+      <ProgramDataBaseFileName>$(OutDir)$(AssemblyName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -168,6 +170,7 @@
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
       <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
       <CallingConvention>StdCall</CallingConvention>
+      <ProgramDataBaseFileName>$(OutDir)$(AssemblyName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -199,6 +202,7 @@
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
       <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
       <CallingConvention>StdCall</CallingConvention>
+      <ProgramDataBaseFileName>$(OutDir)$(AssemblyName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
