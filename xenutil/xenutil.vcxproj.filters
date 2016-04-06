@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="i386">
+      <UniqueIdentifier>{6a28322a-4031-4648-9b4a-f20e37ea0aff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="amd64">
+      <UniqueIdentifier>{5605f40e-8d83-4bb8-906d-6f2a63694202}</UniqueIdentifier>
+      <Extensions>asm</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="amd64\xenutil.def">
+      <Filter>amd64</Filter>
+    </None>
+    <None Include="sources" />
+    <None Include="i386\xenutil.def">
+      <Filter>i386</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="austere.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="balloon.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diags.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="evtchn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gntmap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gnttab.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hvm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hypercall.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iohole.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="logging.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rangeset.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="reexport.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="registry.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="suspend.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="thread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="work.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xen.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xenbus.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xenutl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="i386\asmstubs.c">
+      <Filter>i386</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="austere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="balloon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="diags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="evtchn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gntmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gnttab.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hvm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hypercall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iohole.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="reexport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="registry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xenbus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xenutl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="xenutil.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="amd64\asmstubs.asm">
+      <Filter>amd64</Filter>
+    </MASM>
+  </ItemGroup>
+</Project>

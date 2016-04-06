@@ -58,14 +58,14 @@
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
     <TargetName>xenvesado</TargetName>
     <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
     <DiagnosticMode>false</DiagnosticMode>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
     <TargetName>xenvesado</TargetName>
     <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
     <DiagnosticMode>true</DiagnosticMode>
@@ -73,17 +73,17 @@
     <LibraryPath>..\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
     <DiagnosticMode>true</DiagnosticMode>
     <TargetName>xenvesado</TargetName>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
     <TargetName>xenvesado</TargetName>
     <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
-    <DiagnosticMode>true</DiagnosticMode>
+    <DiagnosticMode>false</DiagnosticMode>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup>
@@ -92,16 +92,20 @@
       <WppScanConfigurationData Condition="'%(ClCompile. ScanConfigurationData)'  == ''">trace.h</WppScanConfigurationData>
       <WppKernelMode>true</WppKernelMode>
       <WppMinimalRebuildFromTracking Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</WppMinimalRebuildFromTracking>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\xengfx\inc;..\xengfx\shared;..\xenhdrs;..\inc;$(DDK_INC_PATH);$(SDK_INC_PATH)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\xengfx\inc;..\xengfx\shared;..\xenhdrs;..\inc;$(DDK_INC_PATH);$(SDK_INC_PATH)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\inc\xengfx;..\xenhdrs;..\inc;$(DDK_INC_PATH);$(SDK_INC_PATH)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\inc\xengfx;..\xenhdrs;..\inc;$(DDK_INC_PATH);$(SDK_INC_PATH)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">XENTARGET="XENVESA";_X86_=1;i386=1;STD_CALL;XENGFXV4V;DBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NO_XENUTIL="yes";XENTARGET="XENVESA";_X86_=1;i386=1;STD_CALL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\xengfx\inc;..\xengfx\shared;..\xenhdrs;..\inc;$(DDK_INC_PATH);$(SDK_INC_PATH)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\xengfx\inc;..\xengfx\shared;..\xenhdrs;..\inc;$(DDK_INC_PATH);$(SDK_INC_PATH)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\inc\xengfx;..\xenhdrs;..\inc;$(DDK_INC_PATH);$(SDK_INC_PATH)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\inc\xengfx;..\xenhdrs;..\inc;$(DDK_INC_PATH);$(SDK_INC_PATH)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NO_XENUTIL="yes";XENTARGET="XENVESA";_X64_=1;amd64=1;STD_CALL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4127;4603;4627;4986;4987;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NO_XENUTIL="yes";XENTARGET="XENVESA";_WIN64;_AMD64_;AMD64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4127;4603;4627;4986;4987;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)$(AssemblyName).pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)$(AssemblyName).pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)$(AssemblyName).pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)$(AssemblyName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link />
     <Link>
