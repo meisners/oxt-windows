@@ -227,7 +227,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="sources" />
-    <None Include="xeninp.inf" />
+    <Inf Include="xeninp.inf">
+      <FileType>Document</FileType>
+    </Inf>
   </ItemGroup>
   <ItemGroup>
     <Text Include="xenmou_hardware_spec.txt" />

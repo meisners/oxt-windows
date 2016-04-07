@@ -68,14 +68,14 @@
     <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
     <TargetName>xenvesado</TargetName>
     <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
-    <DiagnosticMode>true</DiagnosticMode>
+    <DiagnosticMode>false</DiagnosticMode>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
     <LibraryPath>..\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
-    <DiagnosticMode>true</DiagnosticMode>
+    <DiagnosticMode>false</DiagnosticMode>
     <TargetName>xenvesado</TargetName>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
