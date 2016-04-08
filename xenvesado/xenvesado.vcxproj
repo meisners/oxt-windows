@@ -58,33 +58,36 @@
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(ProjectName)\$(PlatformTarget)\</OutDir>
     <TargetName>xenvesado</TargetName>
     <IntDir>$(Configuration)\$(PlatformTarget)\</IntDir>
     <DiagnosticMode>false</DiagnosticMode>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\Build\$(Configuration)\xenutil\$(PlatformTarget)\;$(ProjectDir)..\Build\$(Configuration)\xengfxsh\$(PlatformTarget)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(ProjectName)\$(PlatformTarget)\</OutDir>
     <TargetName>xenvesado</TargetName>
     <IntDir>$(Configuration)\$(PlatformTarget)\</IntDir>
     <DiagnosticMode>false</DiagnosticMode>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
-    <LibraryPath>..\$(Configuration);$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)..\Build\$(Configuration)\xenutil\$(PlatformTarget)\;$(ProjectDir)..\Build\$(Configuration)\xengfxsh\$(PlatformTarget)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(ProjectName)\$(PlatformTarget)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformTarget)\</IntDir>
     <DiagnosticMode>false</DiagnosticMode>
     <TargetName>xenvesado</TargetName>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\Build\$(Configuration)\xenutil\$(PlatformTarget)\;$(ProjectDir)..\Build\$(Configuration)\xengfxsh\$(PlatformTarget)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(ProjectName)\$(PlatformTarget)\</OutDir>
     <TargetName>xenvesado</TargetName>
     <IntDir>$(Configuration)\$(PlatformTarget)\</IntDir>
     <DiagnosticMode>false</DiagnosticMode>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\Build\$(Configuration)\xenutil\$(PlatformTarget)\;$(ProjectDir)..\Build\$(Configuration)\xengfxsh\$(PlatformTarget)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>

@@ -71,22 +71,22 @@
     <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(ProjectName)\$(PlatformTarget)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformTarget)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(ProjectName)\$(PlatformTarget)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformTarget)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(ProjectName)\$(PlatformTarget)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformTarget)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(ProjectName)\$(PlatformTarget)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformTarget)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>

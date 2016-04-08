@@ -160,6 +160,8 @@
   <ItemGroup>
     <None Include="makefile" />
     <None Include="sources" />
-    <None Include="xenaud.inf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Inf Include="xenaud.inf" />
   </ItemGroup>
 </Project>

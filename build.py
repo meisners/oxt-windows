@@ -124,15 +124,21 @@ def get_configuration(release, debug):
 
     return configuration
 
-def get_target_path(release, arch, debug):
+def get_target_path(release, arch, debug, driver):
     configuration = get_configuration(release, debug)
     name = ''.join(configuration.split(' '))
-    target = { 'x86': 'x86', 'x64': 'x64' }
-    target_path = os.sep.join(['..\\Build', name, target[arch]])
+    target_path = os.sep.join(['..\\Build', name, driver, arch])
     print('targpath='+target_path)
 
     return target_path
 
+def get_zip_target_path(release, debug, driver):
+    configuration = get_configuration(release, debug)
+    name = ''.join(configuration.split(' '))
+    target_path = os.sep.join(['Build', name, driver])
+    print('targpath='+target_path)
+
+    return target_path
 
 def shell(command):
     print(command)
@@ -239,7 +245,7 @@ def symstore_del(age):
 
 def symstore_add(projpath, name, release, arch, debug):
     cwd = os.getcwd()
-    target_path = get_target_path(release, arch, debug)
+    target_path = get_target_path(release, arch, debug, name)
 
     symstore_path = [os.environ['KIT'], 'Debuggers']
     if os.environ['PROCESSOR_ARCHITECTURE'] == 'x86':
@@ -341,6 +347,7 @@ if __name__ == '__main__':
     # if len(sys.argv) <= 4 or sys.argv[4] != 'nosdv':
     #     run_sdv(driver, driver)
 
-    listfile = callfnout(['git','ls-tree', '-r', '--name-only', 'HEAD'])
-    archive(projpath+'\\source.tgz', listfile.splitlines(), tgz=True)
+    outpath = get_zip_target_path(release, debug[sys.argv[1]], driver)
+    listfile = callfnout(['git','ls-tree', '-r', '--name-only', 'HEAD', projpath])
+    archive(outpath+'\\source.tgz', listfile.splitlines(), tgz=True)
     archive(driver+'.tar', [driver, 'revision'])

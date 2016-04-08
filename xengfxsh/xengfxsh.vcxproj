@@ -37,7 +37,7 @@
     <BUILD_ALT_DIR>$(Configuration.Replace(' ',''))</BUILD_ALT_DIR>
     <IntDir Condition="'$(Platform)'!='Win32'">$(Configuration)\$(PlatformTarget)\</IntDir>
     <IntDir Condition="'$(Platform)'=='Win32'">$(Configuration)\$(PlatformTarget)\</IntDir>
-    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(ProjectName)\$(PlatformTarget)\</OutDir>
   </PropertyGroup>
   <ImportGroup Label="PreConfiguration">
     <Import Project="$(WDKContentRoot)\bin\conversion\PreConfiguration.props" />
