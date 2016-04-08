@@ -69,8 +69,8 @@
     <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
-    <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <IntDir>$(Configuration)\$(PlatformTarget)\</IntDir>
     <CodeAnalysisRuleSet>DriverRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <TargetExt>.sys</TargetExt>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
@@ -79,12 +79,12 @@
     <CodeAnalysisRuleSet>DriverRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <TargetExt>.sys</TargetExt>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
-    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
-    <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <IntDir>$(Configuration)\$(PlatformTarget)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
-    <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <IntDir>$(Configuration)\$(PlatformTarget)\</IntDir>
     <CodeAnalysisRuleSet>DriverRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <TargetExt>.sys</TargetExt>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
@@ -93,8 +93,8 @@
     <CodeAnalysisRuleSet>DriverRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <TargetExt>.sys</TargetExt>
     <IncludePath>..\inc;$(ProjectDir);$(IncludePath)</IncludePath>
-    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
-    <IntDir>$(Configuration)\$(PlatformName)\</IntDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <IntDir>$(Configuration)\$(PlatformTarget)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

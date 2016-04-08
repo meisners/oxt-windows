@@ -35,9 +35,9 @@
     <WDKContentRoot Condition="'$(WDKContentRoot)' == ''">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows Kits\WDK@WDKContentRoot)</WDKContentRoot>
     <WDKContentRoot Condition="!HasTrailingSlash('$(WDKContentRoot)')">$(WDKContentRoot)\</WDKContentRoot>
     <BUILD_ALT_DIR>$(Configuration.Replace(' ',''))</BUILD_ALT_DIR>
-    <IntDir Condition="'$(Platform)'!='Win32'">$(Configuration)\$(PlatformName)\</IntDir>
-    <IntDir Condition="'$(Platform)'=='Win32'">$(Configuration)\$(PlatformName)\</IntDir>
-    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <IntDir Condition="'$(Platform)'!='Win32'">$(Configuration)\$(PlatformTarget)\</IntDir>
+    <IntDir Condition="'$(Platform)'=='Win32'">$(Configuration)\$(PlatformTarget)\</IntDir>
+    <OutDir>$(ProjectDir)..\Build\$(Configuration)\$(PlatformTarget)\</OutDir>
   </PropertyGroup>
   <ImportGroup Label="PreConfiguration">
     <Import Project="$(WDKContentRoot)\bin\conversion\PreConfiguration.props" />

@@ -127,7 +127,7 @@ def get_configuration(release, debug):
 def get_target_path(release, arch, debug):
     configuration = get_configuration(release, debug)
     name = ''.join(configuration.split(' '))
-    target = { 'x86': 'Win32', 'x64': 'x64' }
+    target = { 'x86': 'x86', 'x64': 'x64' }
     target_path = os.sep.join(['..\\Build', name, target[arch]])
     print('targpath='+target_path)
 
