@@ -120,6 +120,7 @@
       <TargetMachine>MachineX86</TargetMachine>
       <AdditionalDependencies>ntstrsafe.lib;wdmsec.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>xeninp.def</ModuleDefinitionFile>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
     </Link>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\..\inc;$(SDK_INC_PATH);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -148,6 +149,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>ntstrsafe.lib;wdmsec.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>xeninp.def</ModuleDefinitionFile>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
     </Link>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\..\inc;$(SDK_INC_PATH);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -179,6 +181,7 @@
       <TargetMachine>MachineX86</TargetMachine>
       <AdditionalDependencies>ntstrsafe.lib;wdmsec.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>xeninp.def</ModuleDefinitionFile>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
     </Link>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\..\inc;$(SDK_INC_PATH);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -210,6 +213,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <AdditionalDependencies>ntstrsafe.lib;wdmsec.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>xeninp.def</ModuleDefinitionFile>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
     </Link>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\..\inc;$(SDK_INC_PATH);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
